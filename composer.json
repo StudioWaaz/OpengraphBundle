@@ -1,0 +1,23 @@
+{
+    "name": "waaz/opengraph-bundle",
+    "type": "sulu-bundle",
+    "description": "Sulu Bundle to provide Opengraph Tab in Website administration",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andde Zudaire",
+            "email": "dev2@studiowaaz.com"
+        }
+    ],
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Waaz\\OpengraphBundle\\": "/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.5-dev"
+        }
+    }
+}
