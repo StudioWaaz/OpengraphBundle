@@ -9,7 +9,6 @@
             "email": "dev2@studiowaaz.com"
         }
     ],
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Waaz\\OpengraphBundle\\": "/"
