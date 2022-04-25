@@ -45,6 +45,18 @@ class WaazOpengraphExtension extends Extension implements PrependExtensionInterf
                 ]
             );
         }
+
+        if ($container->hasExtension('sulu_media')) {
+            $container->prependExtensionConfig(
+                'sulu_media',
+                [
+                    'image_format_files' => [
+                        __DIR__ . '/../Resources/config/image-formats.xml',
+                        '%kernel.project_dir%/config/image-formats.xml',
+                    ],
+                ]
+            );
+        }
     }
 
     /**

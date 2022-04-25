@@ -14,6 +14,7 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
 
     protected $properties = [
         'og_title',
+        'og_type',
         'og_description',
         'og_image',
     ];
@@ -29,6 +30,7 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
         $data = $this->encodeImages($data);
 
         $this->saveProperty($node, $data, 'og_title');
+        $this->saveProperty($node, $data, 'og_type');
         $this->saveProperty($node, $data, 'og_description');
         $this->saveProperty($node, $data, 'og_image');
     }
@@ -43,6 +45,7 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
 
         return [
             'og_title' => $this->loadProperty($node, 'og_title'),
+            'og_type' => $this->loadProperty($node, 'og_type'),
             'og_description' => $this->loadProperty($node, 'og_description'),
             'og_image' => $ogImage,
         ];

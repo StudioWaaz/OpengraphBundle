@@ -7,23 +7,52 @@
 
     <properties>
         <section name="opengraph">
-            <meta>
-                <title lang="fr">Balises OG</title>
-            </meta>
             <properties>
                 <property name="ext/opengraph/og_title" type="text_line">
                     <meta>
-                        <title lang="fr">OG titre</title>
+                        <title>og:title *</title>
                     </meta>
+                </property>
+                <property name="ext/opengraph/og_type" type="single_select">
+                    <meta>
+                        <title>og:type *</title>
+                    </meta>
+                    <params>
+                        <param name="default_value" value="website"/>
+
+                        <param name="values" type="collection">
+                            <param name="website">
+                                <meta>
+                                    <title>website</title>
+                                </meta>
+                            </param>
+                            <param name="article">
+                                <meta>
+                                    <title>article</title>
+                                </meta>
+                            </param>
+                            <param name="blog">
+                                <meta>
+                                    <title>blog</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
                 </property>
                 <property name="ext/opengraph/og_description" type="text_line">
                     <meta>
-                        <title lang="fr">OG description</title>
+                        <title>og:description *</title>
                     </meta>
+                    <params>
+                        <param name="soft_max_length" value="200" />
+                    </params>
                 </property>
                 <property name="ext/opengraph/og_image" type="single_media_selection">
                     <meta>
-                        <title lang="fr">OG image</title>
+                        <title lang="fr">og:image *</title>
+                        <info_text lang="fr">
+                            format 1200x627
+                        </info_text>
                     </meta>
                     <params>
                         <param name="types" value="image"/>
