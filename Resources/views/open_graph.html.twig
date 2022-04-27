@@ -1,18 +1,20 @@
 <meta property="og:locale" content="{{ app.request.locale|split('_')[0] }}" />
-<meta property="og:url" content="{{ localizations[app.request.locale].url }}" />
-{% if opengraph.og_type %}
-<meta property="og:type" content="{{ opengraph.og_type }}" />
-{% endif %}
-{% if opengraph.og_title %}
-<meta property="og:title" content="{{ opengraph.og_title }}" />
-{% endif %}
-{% if opengraph.og_description %}
-<meta property="og:description" content="{{ opengraph.og_description }}" />
-{% endif %}
-{% if opengraph.og_image %}
-{% set imgUrl = sulu_resolve_media(opengraph.og_image.id, app.request.locale) %}
-<meta property="og:image" content="{{ absolute_url(imgUrl.thumbnails['1200x627']) }}" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="627" />
-<meta property="og:image:alt" content="{{ imgUrl.title }}" />
+<meta property="og:url" content="{{ app.request.uri }}" />
+{% if opengraph is not empty %}
+    {% if opengraph.og_type %}
+    <meta property="og:type" content="{{ opengraph.og_type }}" />
+    {% endif %}
+    {% if opengraph.og_title %}
+    <meta property="og:title" content="{{ opengraph.og_title }}" />
+    {% endif %}
+    {% if opengraph.og_description %}
+    <meta property="og:description" content="{{ opengraph.og_description }}" />
+    {% endif %}
+    {% if opengraph.og_image %}
+    {% set imgUrl = sulu_resolve_media(opengraph.og_image.id, app.request.locale) %}
+    <meta property="og:image" content="{{ absolute_url(imgUrl.thumbnails['1200x627']) }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content="{{ imgUrl.title }}" />
+    {% endif %}
 {% endif %}
