@@ -10,4 +10,11 @@
         </meta>
         <scale x="1200" y="627"/>
     </format>
+    <format key="506x628">
+        <meta>
+            <title lang="en">twitter:image optimized format</title>
+            <title lang="fr">Format optimisé pour la balise twitter:image</title>
+        </meta>
+        <scale x="506" y="628"/>
+    </format>
 </formats>
