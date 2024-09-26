@@ -1,7 +1,7 @@
 ## Installation 
 
 ```
-composer require waaz/opengraph-bundle:dev-main
+composer require waaz/opengraph-bundle
 
 ```
 
