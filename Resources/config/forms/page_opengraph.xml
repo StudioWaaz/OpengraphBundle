@@ -41,6 +41,11 @@
                                     <title>Restaurant</title>
                                 </meta>
                             </param>
+                            <param name="bar">
+                                <meta>
+                                    <title>Bar</title>
+                                </meta>
+                            </param>
                         </param>
                     </params>
                 </property>
