@@ -67,7 +67,6 @@
                         <param name="label">
                             <meta>
                                 <title lang="fr">Lien d'image ou média ?</title>
-                                <info_text lang="fr">Activer pour lien d'image</info_text>
                             </meta>
                         </param>
                     </params>
