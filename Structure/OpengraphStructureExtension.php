@@ -16,6 +16,9 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
         'og_title',
         'og_type',
         'og_description',
+        'og_site_name',
+        'isLink',
+        'og_image_link',
         'og_image',
     ];
 
@@ -32,7 +35,10 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
         $this->saveProperty($node, $data, 'og_title');
         $this->saveProperty($node, $data, 'og_type');
         $this->saveProperty($node, $data, 'og_description');
+        $this->saveProperty($node, $data, 'og_site_name');
+        $this->saveProperty($node, $data, 'isLink');
         $this->saveProperty($node, $data, 'og_image');
+        $this->saveProperty($node, $data, 'og_image_link');
     }
 
     public function load(NodeInterface $node, $webspaceKey, $languageCode)
@@ -47,6 +53,9 @@ class OpengraphStructureExtension extends AbstractExtension implements ExportExt
             'og_title' => $this->loadProperty($node, 'og_title'),
             'og_type' => $this->loadProperty($node, 'og_type'),
             'og_description' => $this->loadProperty($node, 'og_description'),
+            'og_site_name' => $this->loadProperty($node, 'og_site_name'),
+            'isLink' => $this->loadProperty($node, 'isLink'),
+            'og_image_link' => $this->loadProperty($node, 'og_image_link'),
             'og_image' => $ogImage,
         ];
     }

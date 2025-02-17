@@ -23,17 +23,22 @@
                         <param name="values" type="collection">
                             <param name="website">
                                 <meta>
-                                    <title>website</title>
+                                    <title>Website</title>
                                 </meta>
                             </param>
                             <param name="article">
                                 <meta>
-                                    <title>article</title>
+                                    <title>Article</title>
                                 </meta>
                             </param>
                             <param name="blog">
                                 <meta>
-                                    <title>blog</title>
+                                    <title>Blog</title>
+                                </meta>
+                            </param>
+                            <param name="restaurant">
+                                <meta>
+                                    <title>Restaurant</title>
                                 </meta>
                             </param>
                         </param>
@@ -47,12 +52,30 @@
                         <param name="soft_max_length" value="200" />
                     </params>
                 </property>
-                <property name="ext/opengraph/og_image" type="single_media_selection">
+                <property name="ext/opengraph/og_site_name" type="text_line">
+                    <meta>
+                        <title>og:site_name *</title>
+                    </meta>
+                    <params>
+                        <param name="soft_max_length" value="200" />
+                    </params>
+                </property>
+                <property name="isLink" type="checkbox">
+                    <params>
+                        <param name="type" value="toggler"/>
+                        <param name="default_value" value="true"/>
+                        <param name="label">
+                            <meta>
+                                <title lang="fr">Lien d'image ou média ?</title>
+                                <info lang="fr">Activer pour lien d'image</info>
+                            </meta>
+                        </param>
+                    </params>
+                </property>
+                <property name="ext/opengraph/og_image" type="single_media_selection" visibleCondition="isLink == false">
                     <meta>
                         <title lang="fr">og:image *</title>
-                        <info_text lang="fr">
-                            format 1200x627
-                        </info_text>
+                        <info_text lang="fr">Choissisez un média (format 1200x627)</info_text>
                     </meta>
                     <params>
                         <param name="types" value="image"/>
@@ -60,6 +83,12 @@
                             <param name="og_image" />
                         </param>
                     </params>
+                </property>
+                <property name="ext/opengraph/og_image_link" type="text_line" visibleCondition="isLink == true">
+                    <meta>
+                        <title lang="fr">og:image *</title>
+                        <info_text lang="fr">Coller le lien de l'image</info_text>
+                    </meta>
                 </property>
             </properties>
         </section>

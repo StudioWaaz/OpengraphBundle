@@ -14,14 +14,20 @@
     <meta property="og:description" content="{{ opengraph.og_description }}" />
     <meta name="twitter:description" content="{{ opengraph.og_description }}" />
     {% endif %}
-    {% if opengraph.og_image %}
-    {% set imgUrl = sulu_resolve_media(opengraph.og_image.id, app.request.locale) %}
-    <meta property="og:image" content="{{ absolute_url(imgUrl.thumbnails['1200x627']) }}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="627" />
-    <meta property="og:image:alt" content="{{ imgUrl.title }}" />
+    {% set imgUrl = '' %}
+    {% if opengraph.isLink %}
+        <meta property="og:image" content="{{ opengraph.og_image_link }}" />
+        <meta property="og:image:alt" content="{{ opengraph.og_title }}" />
+        <!-- Twitter Card -->
+        <meta name="twitter:image" content="{{ opengraph.og_image_link }}" />
+    {% elseif opengraph.isLink == false and opengraph.og_image %}
+        {% set imgUrl = sulu_resolve_media(opengraph.og_image.id, app.request.locale) %}
+        <meta property="og:image" content="{{ imgUrl.thumbnails['1200x627'] }}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta property="og:image:alt" content="{{ opengraph.og_title }}" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:image" content="{{ absolute_url(imgUrl.thumbnails['506x628']) }}" />
+        <!-- Twitter Card -->
+        <meta name="twitter:image" content="{{ absolute_url(imgUrl.thumbnails['506x628']) }}" />
     {% endif %}
-{% endif %}
+{% endif %}s
