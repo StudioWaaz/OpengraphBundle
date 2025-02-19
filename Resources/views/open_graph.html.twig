@@ -14,7 +14,6 @@
     <meta property="og:description" content="{{ opengraph.og_description }}" />
     <meta name="twitter:description" content="{{ opengraph.og_description }}" />
     {% endif %}
-    {% set imgUrl = '' %}
     {% if opengraph.isLink %}
         <meta property="og:image" content="{{ opengraph.og_image_link }}" />
         <meta property="og:image:alt" content="{{ opengraph.og_title }}" />
@@ -30,4 +29,4 @@
         <!-- Twitter Card -->
         <meta name="twitter:image" content="{{ absolute_url(imgUrl.thumbnails['506x628']) }}" />
     {% endif %}
-{% endif %}s
+{% endif %}
