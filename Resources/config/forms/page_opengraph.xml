@@ -13,42 +13,6 @@
                         <title>og:title *</title>
                     </meta>
                 </property>
-                <property name="ext/opengraph/og_type" type="single_select">
-                    <meta>
-                        <title>og:type *</title>
-                    </meta>
-                    <params>
-                        <param name="default_value" value="website"/>
-
-                        <param name="values" type="collection">
-                            <param name="website">
-                                <meta>
-                                    <title>Website</title>
-                                </meta>
-                            </param>
-                            <param name="article">
-                                <meta>
-                                    <title>Article</title>
-                                </meta>
-                            </param>
-                            <param name="blog">
-                                <meta>
-                                    <title>Blog</title>
-                                </meta>
-                            </param>
-                            <param name="restaurant">
-                                <meta>
-                                    <title>Restaurant</title>
-                                </meta>
-                            </param>
-                            <param name="bar">
-                                <meta>
-                                    <title>Bar</title>
-                                </meta>
-                            </param>
-                        </param>
-                    </params>
-                </property>
                 <property name="ext/opengraph/og_description" type="text_line">
                     <meta>
                         <title>og:description *</title>
@@ -93,6 +57,27 @@
                         <title lang="fr">og:image *</title>
                         <info_text lang="fr">Coller le lien de l'image</info_text>
                     </meta>
+                </property>
+                <property name="ext/opengraph/og_type" type="single_select">
+                    <meta>
+                        <title>og:type *</title>
+                    </meta>
+                    <params>
+                        <param name="default_value" value="website"/>
+
+                        <param name="values" type="collection">
+                            <param name="website">
+                                <meta>
+                                    <title>Website</title>
+                                </meta>
+                            </param>
+                            <param name="article">
+                                <meta>
+                                    <title>Article</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
                 </property>
             </properties>
         </section>
