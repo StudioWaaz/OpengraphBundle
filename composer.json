@@ -18,5 +18,8 @@
         "branch-alias": {
             "dev-main": "1.2-dev"
         }
+    },
+    "require": {
+        "sulu/sulu": "^2.6"
     }
 }
