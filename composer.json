@@ -20,6 +20,6 @@
         }
     },
     "require": {
-        "sulu/sulu": "^2.6"
+        "sulu/sulu": "^3.0"
     }
 }

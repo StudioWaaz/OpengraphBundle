@@ -1,36 +1,37 @@
-<?php 
+<?php
+
 namespace Waaz\OpengraphBundle\Admin;
 
 use Sulu\Bundle\AdminBundle\Admin\Admin;
-use Sulu\Bundle\PageBundle\Admin\PageAdmin;
 use Sulu\Bundle\AdminBundle\Admin\View\ToolbarAction;
+use Sulu\Bundle\AdminBundle\Admin\View\ViewBuilderFactoryInterface;
 use Sulu\Bundle\AdminBundle\Admin\View\ViewCollection;
 use Sulu\Component\Security\Authorization\PermissionTypes;
-use Sulu\Bundle\AdminBundle\Admin\View\ViewBuilderFactoryInterface;
-use Sulu\Component\Webspace\Manager\WebspaceManagerInterface;
 use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
+use Sulu\Component\Webspace\Manager\WebspaceManagerInterface;
+use Sulu\Page\Infrastructure\Sulu\Admin\PageAdmin;
 
 class OpengraphAdmin extends Admin
 {
     /**
-    * @var ViewBuilderFactoryInterface
-    */
+     * @var ViewBuilderFactoryInterface
+     */
     private $viewBuilderFactory;
 
     /**
-    * @var WebspaceManagerInterface
-    */
+     * @var WebspaceManagerInterface
+     */
     private $webspaceManager;
 
     /**
-    * @var SecurityCheckerInterface
-    */
+     * @var SecurityCheckerInterface
+     */
     private $securityChecker;
 
     public function __construct(
         ViewBuilderFactoryInterface $viewBuilderFactory,
         WebspaceManagerInterface $webspaceManager,
-        SecurityCheckerInterface $securityChecker
+        SecurityCheckerInterface $securityChecker,
     ) {
         $this->viewBuilderFactory = $viewBuilderFactory;
         $this->webspaceManager = $webspaceManager;
@@ -42,7 +43,7 @@ class OpengraphAdmin extends Admin
         $formToolbarActionsWithoutType = [
             new ToolbarAction('sulu_admin.save_with_publishing'),
         ];
- 
+
         $routerAttributesToFormRequest = ['parentId', 'webspace'];
         $routerAttributesToFormMetdata = ['webspace'];
 
