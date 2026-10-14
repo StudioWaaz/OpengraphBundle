@@ -57,7 +57,6 @@ class OpengraphAdmin extends Admin
                     ->setResourceKey('pages')
                     ->setFormKey('page_opengraph')
                     ->setTabTitle('Open Graph')
-                    ->setTabPriority(256)
                     ->addToolbarActions($formToolbarActionsWithoutType)
                     ->addRouterAttributesToFormRequest($routerAttributesToFormRequest)
                     ->setPreviewCondition($previewCondition)
